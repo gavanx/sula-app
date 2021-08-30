@@ -24,6 +24,27 @@ export default () => {
         },
       },
     ],
+    actionsRender: [
+      {
+        type: 'button',
+        disabled: (ctx) => {
+          const selectedRowKeys = ctx.table.getSelectedRowKeys() || [];
+          return !selectedRowKeys.length;
+        },
+        props: {
+          children: '批量删除',
+          type: 'primary',
+          icon: 'delete',
+        },
+        action: [
+          (ctx) => {
+            console.log('批量删除', ctx);
+          },
+          'refreshTable',
+        ],
+      },
+    ],
+    rowSelection: {},
     columns: [
       {
         key: 'id',
