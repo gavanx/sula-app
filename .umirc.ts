@@ -6,6 +6,12 @@ export default defineConfig({
   },
   routes: [
     { path: '/', component: '@/pages/index' },
+    { path: '/table', component: '@/pages/table' },
   ],
   fastRefresh: {},
+  sula: {
+    locale: {
+      default: 'zh-CN',
+    },
+  },
 });
